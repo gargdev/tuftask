@@ -5,6 +5,8 @@
 
 This project is a dynamic one-page website built with React, Node.js, and MySQL. The website includes a banner with a countdown timer and an internal dashboard to control the banner's visibility, description, timer, and link. The project is designed with Tailwind CSS for a clean and attractive layout.
 
+## Live Demo: https://tuftaskanup.netlify.app/
+
 ## Features
 
 - **Dynamic Banner**: Optionally display a banner with a countdown timer that shows the remaining time before the banner disappears.
@@ -130,5 +132,3 @@ node_modules/
 This project is licensed under the MIT License.
 
 ---
-
-Feel free to adjust any of the instructions or content to match your specific project details.
