@@ -1,4 +1,3 @@
-Here's a README file template for your project, covering all the steps from setup to deployment:
 
 ---
 
@@ -45,10 +44,10 @@ This project is a dynamic one-page website built with React, Node.js, and MySQL.
 
    **`.env`**:
    ```plaintext
-   DB_NAME=tuftask
-   DB_USER=admin
-   DB_PASSWORD=tBYLrqY1KUPt97QGri7F
-   DB_HOST=database-1.cqtvrt6wgmyn.ap-south-1.rds.amazonaws.com
+   DB_NAME=
+   DB_USER=
+   DB_PASSWORD=
+   DB_HOST=
    ```
 
    Run the backend server:
