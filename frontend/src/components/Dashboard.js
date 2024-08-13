@@ -7,7 +7,7 @@ function Dashboard({ refreshBanner }) {
   const [isVisible, setIsVisible] = useState(true);
 
   const updateBanner = async () => {
-    await fetch('https://tuftask-r9wd.onrender.com/api/banner', {
+    await fetch('https://tuftask-five.vercel.app/api/banner', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

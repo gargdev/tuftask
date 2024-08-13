@@ -6,7 +6,7 @@ function HomePage() {
   const [bannerData, setBannerData] = useState(null);  // Initialize as null
   
   const fetchBannerData = async () => {
-    const response = await fetch('https://tuftask-r9wd.onrender.com/api/banner');
+    const response = await fetch('https://tuftask-five.vercel.app/api/banner');
     const data = await response.json();
     setBannerData(data);
   };
