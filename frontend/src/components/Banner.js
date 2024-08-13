@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 function Banner({ bannerData }) {
   const [timeLeft, setTimeLeft] = useState(bannerData.timer);
+  const [bannerHidden, setBannerHidden] = useState(false); // State to track banner visibility
 
   useEffect(() => {
-    if (timeLeft <= 0) return;
+    if (timeLeft <= 0) {
+      setBannerHidden(true);
+      return;
+    }
 
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
@@ -12,6 +16,14 @@ function Banner({ bannerData }) {
 
     return () => clearInterval(intervalId);
   }, [timeLeft]);
+
+  if (bannerHidden) {
+    return (
+      <div className="bg-gray-100 text-gray-700 p-4">
+        <p>The banner has expired. Please refresh the page to see the banner again.</p>
+      </div>
+    );
+  }
 
   if (timeLeft <= 0) return null;
 
