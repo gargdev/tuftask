@@ -5,7 +5,7 @@ function Dashboard({ refreshBanner }) {
   const [link, setLink] = useState('');
   const [timer, setTimer] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const [updateMessage, setUpdateMessage] = useState(''); // State for the success message
+  const [updateMessage, setUpdateMessage] = useState(''); 
 
   const updateBanner = async () => {
     const response = await fetch('https://tuftask-r9wd.onrender.com/api/banner', {

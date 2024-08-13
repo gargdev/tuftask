@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function Banner({ bannerData }) {
   const [timeLeft, setTimeLeft] = useState(bannerData.timer);
-  const [bannerHidden, setBannerHidden] = useState(false); // State to track banner visibility
+  const [bannerHidden, setBannerHidden] = useState(false); 
 
   useEffect(() => {
     if (timeLeft <= 0) {
