@@ -5,16 +5,26 @@ function Dashboard({ refreshBanner }) {
   const [link, setLink] = useState('');
   const [timer, setTimer] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [updateMessage, setUpdateMessage] = useState(''); // State for the success message
 
   const updateBanner = async () => {
-    await fetch('https://tuftask-r9wd.onrender.com/api/banner', {
+    const response = await fetch('https://tuftask-r9wd.onrender.com/api/banner', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ description, link, timer, isVisible }),
     });
-    refreshBanner();
+
+    if (response.ok) {
+      setUpdateMessage('Banner updated successfully. Please refresh the page to see the changes.');
+      refreshBanner();
+    } else {
+      setUpdateMessage('Failed to update banner. Please try again.');
+    }
+
+    // Clear the message after a delay (optional)
+    setTimeout(() => setUpdateMessage(''), 5000);
   };
 
   return (
@@ -60,6 +70,12 @@ function Dashboard({ refreshBanner }) {
       >
         Update Banner
       </button>
+
+      {updateMessage && (
+        <div className="mt-4 p-2 bg-green-200 text-green-700 rounded">
+          {updateMessage}
+        </div>
+      )}
     </div>
   );
 }
