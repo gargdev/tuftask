@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import Dashboard from '../components/Dashboard';
+import Loader from '../components/Loader'; 
 
 function HomePage() {
-  const [bannerData, setBannerData] = useState(null);  // Initialize as null
+  const [bannerData, setBannerData] = useState(null);  
   
   const fetchBannerData = async () => {
     const response = await fetch('https://tuftask-r9wd.onrender.com/api/banner');
@@ -17,8 +18,14 @@ function HomePage() {
 
   return (
     <div>
-      {bannerData && bannerData.isVisible && <Banner bannerData={bannerData} />}  
-      <Dashboard refreshBanner={fetchBannerData} />
+      {bannerData === null ? ( 
+        <Loader />
+      ) : (
+        <>
+          {bannerData.isVisible && <Banner bannerData={bannerData} />}  
+          <Dashboard refreshBanner={fetchBannerData} />
+        </>
+      )}
     </div>
   );
 }
